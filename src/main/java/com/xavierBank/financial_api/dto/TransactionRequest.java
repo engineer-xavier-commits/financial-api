@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class TransactionRequest {
 
     private LocalDateTime date;
-    private String type;
+    private String TransactionType;
     private BigDecimal amount;
     private String description;
 }

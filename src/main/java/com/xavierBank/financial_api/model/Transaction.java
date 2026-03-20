@@ -11,7 +11,7 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transationId;
+    private Long transactionId;
 
     private UUID accountId;
 

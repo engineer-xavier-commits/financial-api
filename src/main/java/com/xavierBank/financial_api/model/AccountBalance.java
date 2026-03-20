@@ -9,8 +9,10 @@ import java.util.UUID;
 
 @Entity
 public class AccountBalance {
+
     @Id
     private UUID accountId;
+
     private BigDecimal saldo;
     private LocalDateTime updatedAt;
 
