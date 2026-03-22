@@ -1,4 +1,4 @@
-package com.xavierBank.financial_api.model;
+package com.xavierBank.financial_api.entity;
 
 import jakarta.persistence.*;
 
@@ -25,5 +25,7 @@ public class Transaction {
     private String description;
 
     private LocalDateTime createdAt;
+
+
 
 }

@@ -1,7 +1,7 @@
 package com.xavierBank.financial_api.service;
 
 import com.xavierBank.financial_api.dto.AccountRequest;
-import com.xavierBank.financial_api.model.Account;
+import com.xavierBank.financial_api.entity.Account;
 import com.xavierBank.financial_api.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,4 +31,6 @@ public class AccountService {
         return repository.save(account);
 
     }
+
+
 }
