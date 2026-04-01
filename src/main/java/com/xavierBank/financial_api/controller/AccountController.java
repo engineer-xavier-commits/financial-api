@@ -1,6 +1,7 @@
 package com.xavierBank.financial_api.controller;
 
 import com.xavierBank.financial_api.dto.AccountRequest;
+import com.xavierBank.financial_api.dto.TransactionRequest;
 import com.xavierBank.financial_api.entity.Account;
 import com.xavierBank.financial_api.entity.AccountBalance;
 import com.xavierBank.financial_api.entity.Transaction;
@@ -55,7 +56,7 @@ import java.util.UUID;
             @RequestParam LocalDate data_final) {
 
         List<Transaction> list = transactionRepository
-                .findByAccountIdAndDateBetween(id, data_inicial, data_final);
+                .findByAccount_AccountIdAndDateBetween(id, data_inicial, data_final);
 
         return ResponseEntity.ok(list);
     }
@@ -71,6 +72,14 @@ import java.util.UUID;
     public ResponseEntity<Void> delete(
             @PathVariable UUID id) {service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping ("/{id}/update/transaction")
+    public ResponseEntity<Transaction> creatTansaction(
+            @PathVariable UUID id,
+            @RequestBody @Valid TransactionRequest request) {
+        Transaction transaction= service.createTransaction(id,request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(transaction);
     }
 
     @GetMapping("/{id}/balance")
